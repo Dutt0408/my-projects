@@ -23,13 +23,14 @@ export default function Confirmation() {
           Learn
         </button>
         <button
-          className="accept"
-          onClick={() => {
-            window.location.href = 'https://internationalstudentregistration.netlify.app';
-          }}
-        >
-          Accept
-        </button>
+  className="accept"
+  onClick={() => {
+    window.open('https://internationalstudentregistration.netlify.app', '_blank');
+  }}
+>
+  Accept
+</button>
+
       </div>
     </div>
   );
