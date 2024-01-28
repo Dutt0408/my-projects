@@ -14,14 +14,15 @@ export default function Confirmation() {
         <a href="https://www.baps.org/Global-Network/North-America/Toronto/News.aspx">Previous Events</a>.
       </p>
       <div className="actions">
-        <button
-          className="accept"
-          onClick={() => {
-            window.location.href = 'https://na.baps.org/learn';
-          }}
-        >
-          Learn
-        </button>
+      <button
+  className="accept"
+  onClick={() => {
+    window.open('https://na.baps.org/learn', '_blank');
+  }}
+>
+  Learn
+</button>
+
         <button
   className="accept"
   onClick={() => {
