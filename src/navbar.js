@@ -1,71 +1,28 @@
+import React from 'react';
+import './apple.css'
 
-import "primeicons/primeicons.css";
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "primereact/resources/primereact.css";
-import "primeflex/primeflex.css";
-import "./apple.css";
-import React, { useState } from 'react';
-import { Form, Field } from 'react-final-form';
-import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
-import { ReactFinalFormDemo } from './ReactFinalFormDemo';
-import Confirmation from './Confirmation';
-
-function PhoneNumberCheck() {
-  const [redirectToFinalForm, setRedirectToFinalForm] = useState(false);
-
-  const onSubmit = async (values) => {
-    const PhoneNumber = values.PhoneNumber;
-
-    try {
-      const response = await fetch(`https://script.google.com/macros/s/AKfycbz_wTcsFSK1wG4W3yf3TXONaqQ25H9trG8BNHaJRGDc0OuAdoVui43eE-RrfEKOMtrH/exec?PhoneNumber=${PhoneNumber}`);
-      const data = await response.json();
-
-      if (data.exists) {
-        console.log("Phone number exists. Redirecting to ReactFinalForm.");
-        setRedirectToFinalForm(true);
-        return Confirmation ;
-      
-      } else {
-        console.log("Phone number does not exist. Continue with the current component.");
-        return <ReactFinalFormDemo />;
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-  // Conditional rendering based on the state
-  if (redirectToFinalForm) {
-    return <ReactFinalFormDemo />;
-  }
+export default function Confirmation() {
+  
 
   return (
-    <div>
-      <Form
-        onSubmit={onSubmit}
-        initialValues={{
-          PhoneNumber: '',
-        }}
-        render={({ handleSubmit }) => (
-          <form action="https://script.google.com/macros/s/AKfycbz_wTcsFSK1wG4W3yf3TXONaqQ25H9trG8BNHaJRGDc0OuAdoVui43eE-RrfEKOMtrH/exec" method="post" className="p-fluid netlify">
-            <Field
-              name="PhoneNumber"
-              render={({ input }) => (
-                <div className="field">
-                  <span className="p-float-label">
-                    <InputText id="PhoneNumber" {...input} />
-                    <label htmlFor="PhoneNumber">Phone Number*</label>
-                  </span>
-                </div>
-              )}
-            />
-            <Button type="submit" label="Check Phone Number" className="mt-2" />
-          </form>
-        )}
-      />
+    <div className="cookie-card">
+      <span className="title">Registration Process</span>
+      <p className="description">
+        By filling this form, you agree that you might be contacted for upcoming events at International Student Sabha
+        <br />
+        <br />
+        <a href="https://www.baps.org/Global-Network/North-America/Toronto/News.aspx">Previous Events</a>.
+      </p>
+      <div className="actions">
+        <button
+          className="accept"
+          onClick={() => {
+            window.location.href = 'https://internationalstudentregistration.netlify.app';
+          }}
+        >
+          Accept
+        </button>
+      </div>
     </div>
   );
 }
-
-export default PhoneNumberCheck;
