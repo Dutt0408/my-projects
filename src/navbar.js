@@ -13,6 +13,7 @@ export default function Confirmation() {
     
         <a href="https://www.baps.org/Global-Network/North-America/Toronto/News.aspx">Previous Events</a>.
       </p>
+      <br></br>
       <div className="actions">
       <button
   className="accept"
