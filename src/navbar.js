@@ -17,6 +17,14 @@ export default function Confirmation() {
         <button
           className="accept"
           onClick={() => {
+            window.location.href = 'https://na.baps.org/learn';
+          }}
+        >
+          Learn
+        </button>
+        <button
+          className="accept"
+          onClick={() => {
             window.location.href = 'https://internationalstudentregistration.netlify.app';
           }}
         >
