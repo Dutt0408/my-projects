@@ -10,7 +10,7 @@ export default function Confirmation() {
       <p className="description">
         By filling this form, you agree that you might be contacted for upcoming events at International Student Sabha
         <br />
-        <br />
+    
         <a href="https://www.baps.org/Global-Network/North-America/Toronto/News.aspx">Previous Events</a>.
       </p>
       <div className="actions">
