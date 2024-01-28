@@ -19,7 +19,7 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
-    height:700px
+    height:741px
   }
   
   .title {
@@ -30,7 +30,7 @@
   .description {
     margin-top: 1rem;
     font-size: 0.875rem;
-    line-height: 1.25rem;
+    line-height: 1.5rem;
     color: rgb(75 85 99);
     text-align: justify;
   }
