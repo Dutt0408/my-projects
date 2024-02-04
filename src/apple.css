@@ -19,7 +19,8 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
-    height:741px
+    height:741px;
+    text-align: center;
   }
   
   .title {
@@ -53,6 +54,7 @@
     -moz-column-gap: 1rem;
     column-gap: 1rem;
     flex-shrink: 0;
+    flex-direction: column;
   }
   
   .pref {

@@ -1,28 +1,27 @@
 import React from 'react';
 import './apple.css'
+import './images.css'
 
 export default function Confirmation() {
   
 
   return (
+    <div className="whole">
+       
+
+    
+      
     <div className="cookie-card">
-      <span className="title">Registration Process</span>
+    <h1 className="RegText">Registration</h1>
       <p className="description">
         By filling this form, you agree that you might be contacted for upcoming events at International Student Sabha
         <br />
     
-        <a href="https://www.baps.org/Global-Network/North-America/Toronto/News.aspx">Previous Events</a>.
+
       </p>
       <br></br>
       <div className="actions">
-      <button
-  className="accept"
-  onClick={() => {
-    window.open('https://na.baps.org/learn', '_blank');
-  }}
->
-  Learn
-</button>
+    
 
         <button
   className="accept"
@@ -34,6 +33,7 @@ export default function Confirmation() {
 </button>
 
       </div>
+    </div>
     </div>
   );
 }
