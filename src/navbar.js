@@ -26,7 +26,7 @@ export default function Confirmation() {
         <button
   className="accept"
   onClick={() => {
-    window.open('https://internationalstudentregistration.netlify.app', '_blank');
+    window.open('https://heroic-starburst-bf4135.netlify.app/', '_blank');
   }}
 >
   Accept
