@@ -14,7 +14,7 @@ export default function Confirmation() {
     <div className="cookie-card">
     <h1 className="RegText">Registration</h1>
       <p className="description">
-        By filling this form, you agree that you might be contacted for upcoming events at International Student Sabha
+        By filling this form, you agree that you might be contacted for upcoming events at International Student Events
         <br />
     
 
