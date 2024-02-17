@@ -33,11 +33,11 @@ function App() {
       <h1>QR Code Generator</h1>
       {Object.keys(urlParams).length > 0 && (
         <div>
-          <h2>URL Parameters:</h2>
+
           <ul>
             {Object.entries(urlParams).map(([key, value]) => (
               <li key={key}>
-                <strong>{key}:</strong> {value}
+
               </li>
             ))}
           </ul>
@@ -45,7 +45,7 @@ function App() {
       )}
       {qrCodeData && (
         <div>
-          <h2>QR Code:</h2>
+        
           <QRCode value={qrCodeData} />
         </div>
       )}
