@@ -1,10 +1,12 @@
 // src/App.js
 import React, { useEffect, useState } from 'react';
 import QRCode from 'qrcode.react';
+import './images.css';
 
 function App() {
   const [urlParams, setUrlParams] = useState({});
   const [qrCodeData, setQrCodeData] = useState('');
+  const [name, setName] = useState('Kishan bhai'); // Default name
 
   useEffect(() => {
     // Function to extract URL parameters
@@ -21,6 +23,11 @@ function App() {
     const params = getUrlParams();
     setUrlParams(params);
 
+    // Set name from parameters if available
+    if (params.name) {
+      setName(params.name);
+    }
+
     // Generate QR code data based on URL parameters
     const qrCodeData = Object.entries(params)
       .map(([key, value]) => `${key}=${value}`)
@@ -30,25 +37,18 @@ function App() {
 
   return (
     <div>
-      <h1>QR Code Generator</h1>
-      {Object.keys(urlParams).length > 0 && (
-        <div>
+      <div className="bdy">
+        <h2 className='Tttle'>Sabha Attendance QRCode</h2><br />
 
-          <ul>
-            {Object.entries(urlParams).map(([key, value]) => (
-              <li key={key}>
+        <h3 className='NameGreet'> Jay Swaminarayan {name}, <br /><br />
+          Please present the QR code below upon your entry:</h3>
 
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-      {qrCodeData && (
-        <div>
-        
-          <QRCode value={qrCodeData} />
-        </div>
-      )}
+        {qrCodeData && (
+          <div>
+            <QRCode value={qrCodeData} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
