@@ -6,13 +6,64 @@
   text-align: center;
   opacity: 0.6;
 
+
+}
+.beyond{
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 4em;
+
+
+}
+.Qrsze{
+  height: 20em !important;
+  width: 20em !important;
 }
 .bdy{
   text-align: center;
   display: flex;
   flex-direction: column;
+  margin-top: 19em;
 
 }
 body{
-  background-color: #cccccc3a;
+  /* background-color: #cccccc3a; */
+background-image: url(https://i.pinimg.com/originals/58/c7/10/58c7103e48b322497dcc1f4e8c973a61.jpg);
+
+}
+.redtxt{
+  font-weight: bold;
+  /* color: rgba(255, 0, 0, 0.716); */
+  margin-top:1em;
+  font-size: 3em;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 852px) {
+
+.bdy{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12em;
+
+}
+
+.Qrsze{
+  height: 15em !important;
+  width: 15em !important;
+
+}
+.redtxt{
+  font-weight: bold;
+  /* color: rgba(255, 0, 0, 0.716); */
+  margin-top:1em;
+  font-size: 2em;
+  opacity:0.8;
+}
+body{
+  /* background-color: #cccccc3a; */
+background-image: url(https://i.pinimg.com/originals/58/c7/10/58c7103e48b322497dcc1f4e8c973a61.jpg);
+background-position: top;
+
+}
 }

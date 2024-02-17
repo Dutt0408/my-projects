@@ -6,8 +6,8 @@ import './images.css';
 function App() {
   const [urlParams, setUrlParams] = useState({});
   const [qrCodeData, setQrCodeData] = useState('');
-  const [name, setName] = useState(''); // Default name
-  const [lastName, setLastName] = useState('');
+  const [name, setName] = useState('Dutt'); // Default name
+  const [lastName, setLastName] = useState('Patel');
   useEffect(() => {
     // Function to extract URL parameters
     const getUrlParams = () => {
@@ -36,6 +36,8 @@ function App() {
     const qrCodeData = Object.entries(params)
       .map(([key, value]) => `${key}=${value}`)
       .join('&');
+
+
     setQrCodeData(qrCodeData);
    
   }, [urlParams]); 
@@ -45,14 +47,15 @@ function App() {
       <div className="bdy">
         <h2 className='Tttle'>Sabha Attendance QRCode</h2><br />
 
-        <h3 className='NameGreet'> Jay Swaminarayan {name} {lastName} <br /><br />
-          Please present the QR code below upon your entry:</h3>
-
+        
         {qrCodeData && (
           <div>
-            <QRCode value={qrCodeData} />
+            <QRCode className='Qrsze' value={qrCodeData} />
           </div>
         )}
+        <div className="redtxt">
+         Name: {name} {lastName} 
+        </div>
       </div>
     </div>
   );
