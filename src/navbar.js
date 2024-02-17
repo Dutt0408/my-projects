@@ -7,7 +7,7 @@ function App() {
   const [urlParams, setUrlParams] = useState({});
   const [qrCodeData, setQrCodeData] = useState('');
   const [name, setName] = useState(''); // Default name
-
+  const [lastName, setLastName] = useState('');
   useEffect(() => {
     // Function to extract URL parameters
     const getUrlParams = () => {
@@ -26,6 +26,10 @@ function App() {
     // Set name from parameters if available
     if (params.name) {
       setName(params.name);
+      
+    }
+    if (params.lastName) {
+      setLastName(params.lastName);
     }
 
     // Generate QR code data based on URL parameters
@@ -41,7 +45,7 @@ function App() {
       <div className="bdy">
         <h2 className='Tttle'>Sabha Attendance QRCode</h2><br />
 
-        <h3 className='NameGreet'> Jay Swaminarayan {name} <br /><br />
+        <h3 className='NameGreet'> Jay Swaminarayan {name} {lastName} <br /><br />
           Please present the QR code below upon your entry:</h3>
 
         {qrCodeData && (
