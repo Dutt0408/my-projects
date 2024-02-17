@@ -67,3 +67,32 @@ background-position: top;
 
 }
 }
+@media only screen and (min-width: 853px) and (max-width: 3500px) {
+
+.bdy{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12em;
+
+}
+
+.Qrsze{
+  height: 15em !important;
+  width: 15em !important;
+
+}
+.redtxt{
+  font-weight: bold;
+  /* color: rgba(255, 0, 0, 0.716); */
+  margin-top:1em;
+  font-size: 2em;
+  opacity:0.8;
+}
+body{
+  /* background-color: #cccccc3a; */
+background-image: url(https://files.123freevectors.com/wp-content/original/156228-abstract-mint-green-background.jpg);
+background-position: left;
+
+}
+}
