@@ -1,39 +1,56 @@
-import React from 'react';
-import './apple.css'
-import './images.css'
+// src/App.js
+import React, { useEffect, useState } from 'react';
+import QRCode from 'qrcode.react';
 
-export default function Confirmation() {
-  
+function App() {
+  const [urlParams, setUrlParams] = useState({});
+  const [qrCodeData, setQrCodeData] = useState('');
+
+  useEffect(() => {
+    // Function to extract URL parameters
+    const getUrlParams = () => {
+      const searchParams = new URLSearchParams(window.location.search);
+      const params = {};
+      for (const [key, value] of searchParams) {
+        params[key] = value;
+      }
+      return params;
+    };
+
+    // Extract URL parameters and update state
+    const params = getUrlParams();
+    setUrlParams(params);
+
+    // Generate QR code data based on URL parameters
+    const qrCodeData = Object.entries(params)
+      .map(([key, value]) => `${key}=${value}`)
+      .join('&');
+    setQrCodeData(qrCodeData);
+  }, []);
 
   return (
-    <div className="whole">
-       
-
-    
-      
-    <div className="cookie-card">
-    <h1 className="RegText">Registration</h1>
-      <p className="description">
-        By filling this form, you agree that you might be contacted for upcoming events at International Student Events
-        <br />
-    
-
-      </p>
-      <br></br>
-      <div className="actions">
-    
-
-        <button
-  className="accept"
-  onClick={() => {
-    window.open('https://heroic-starburst-bf4135.netlify.app/', '_blank');
-  }}
->
-  Accept
-</button>
-
-      </div>
-    </div>
+    <div>
+      <h1>QR Code Generator</h1>
+      {Object.keys(urlParams).length > 0 && (
+        <div>
+          <h2>URL Parameters:</h2>
+          <ul>
+            {Object.entries(urlParams).map(([key, value]) => (
+              <li key={key}>
+                <strong>{key}:</strong> {value}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {qrCodeData && (
+        <div>
+          <h2>QR Code:</h2>
+          <QRCode value={qrCodeData} />
+        </div>
+      )}
     </div>
   );
 }
+
+export default App;
